@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option go_package = "github.com/umamaheswari76";
+
+package crud_proto;
+
+service CustomerService {
+    rpc Create(CreateCustomerRequest) returns (CreateCustomerResponse);
+    rpc Read(ReadCustomerRequest) returns (ReadCustomerResponse);
+    rpc Update(UpdateCustomerRequest) returns (UpdateCustomerResponse);
+    rpc Delete(DeleteCustomerRequest) returns (DeleteCustomerResponse);
+}
+
+message CreateCustomerRequest {
+    string Id = 1; 
+    string Name = 2;
+    string Password = 3;
+    string Contact = 4;
+}
+
+message CreateCustomerResponse {
+    string Response = 1;
+}
+
+message ReadCustomerRequest {
+    string Id = 1 ;
+}
+
+message ReadCustomerResponse {
+    string Id = 1; 
+    string Name = 2;
+    string Contact = 4;
+}
+
+message UpdateCustomerRequest{
+    string Id =1;
+    string Name = 2;
+    string contact = 3;
+}
+
+message UpdateCustomerResponse{
+    string Response = 1;
+}
+
+message DeleteCustomerRequest {
+    string Id =1;
+}
+
+message DeleteCustomerResponse {
+    string Response = 1;
+}
